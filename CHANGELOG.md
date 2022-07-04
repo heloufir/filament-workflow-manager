@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.0.7 - 2022-07-04
+
+- Update views 
+  - Bug-fixing
+
 ## 1.0.6 - 2022-07-04
 
 - Update livewire components 

@@ -16,7 +16,7 @@
     @if($item->children->count())
         <ul>
             @foreach($item->children as $child)
-                @include('partials.workflow-tree-item', ['item' => $child])
+                @include('filament-workflow-manager::partials.workflow-tree-item', ['item' => $child])
             @endforeach
         </ul>
     @endif

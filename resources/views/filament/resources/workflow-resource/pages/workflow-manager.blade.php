@@ -44,7 +44,7 @@
                 </span>
                     <ul>
                         @foreach($record->workflow_models as $item)
-                            @include('partials.workflow-tree-item', ['item' => $item])
+                            @include('filament-workflow-manager::partials.workflow-tree-item', ['item' => $item])
                         @endforeach
                     </ul>
                 </li>
