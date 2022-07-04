@@ -54,7 +54,7 @@ Here you need to add the implementation of the interface `InteractsWithWorkflows
 
 3. Create a workflow
 After you have configured your model, you can now create a workflow linked to this model, watch the following demo video:
-[![Watch the demo video](filament-workflow-manager-demo-play.png)](filament-workflow-manager-demo.mp4)
+[![Watch the demo video](filament-workflow-manager-demo-play.png)](https://user-images.githubusercontent.com/6197875/177192142-6ea200cb-9d2b-4bb3-a2b2-d65e25a4da66.mp4)
 
 4. Add a Filament resource to manage your model
 Refere to the Filament documentation: [https://filamentphp.com/docs/2.x/admin/resources/getting-started#creating-a-resource](https://filamentphp.com/docs/2.x/admin/resources/getting-started#creating-a-resource)
