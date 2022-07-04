@@ -60,7 +60,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    <livewire:workflow-manager-edit :record="$to_edit"></livewire:workflow-manager-edit>
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerEdit::class, ['record' => $to_edit])
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.delete.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    <livewire:workflow-manager-delete :record="$to_delete"></livewire:workflow-manager-delete>
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerDelete::class, ['record' => $to_edit])
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    <livewire:workflow-manager-add :record="$to_add" :workflow="$record"></livewire:workflow-manager-add>
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAdd::class, ['record' => $to_edit, 'workflow' => $record])
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    <livewire:workflow-manager-add-status></livewire:workflow-manager-add-status>
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAddStatus::class)
                 </div>
             </div>
         </div>

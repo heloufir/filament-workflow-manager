@@ -2,8 +2,13 @@
 
 namespace Heloufir\FilamentWorkflowManager;
 
+use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAdd;
+use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAddStatus;
+use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerDelete;
+use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerEdit;
 use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Livewire\Livewire;
 
 class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
 {
@@ -35,6 +40,20 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
         if (file_exists($file = __DIR__ . '/../src/helpers.php'))
         {
             require $file;
+        }
+    }
+
+    public function packageBooted(): void
+    {
+        parent::packageBooted();
+
+        foreach ([
+                     WorkflowManagerAdd::class,
+                     WorkflowManagerEdit::class,
+                     WorkflowManagerDelete::class,
+                     WorkflowManagerAddStatus::class,
+                 ] as $component) {
+            Livewire::component($component::getName(), $component);
         }
     }
 
