@@ -54,7 +54,7 @@ class WorkflowManagerAddStatus extends Component implements HasForms
         $model->name = $data['name'];
         $model->color = $data['color'];
         $model->save();
-        Filament::notify('success', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.form.submit'));
+        Filament::notify('success', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.messages.submitted'));
         $this->emit('close_add_status');
     }
 
