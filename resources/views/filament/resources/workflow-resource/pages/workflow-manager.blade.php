@@ -73,7 +73,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.delete.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerDelete::class, ['record' => $to_edit])
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerDelete::class, ['record' => $to_delete])
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
-                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAdd::class, ['record' => $to_edit, 'workflow' => $record])
+                    @livewire(Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAdd::class, ['record' => $to_add, 'workflow' => $record])
                 </div>
             </div>
         </div>
