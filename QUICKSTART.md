@@ -10,7 +10,7 @@ laravel new MyProject
 composer require heloufir/filament-workflow-manager
 ```
 
-3. Register package into your application providers `config/app.php`
+3. Register the package into your application providers `config/app.php`
 ```bash
 \Heloufir\FilamentWorkflowManager\FilamentWorkflowManagerServiceProvider::class,
 ```
@@ -23,7 +23,7 @@ php artisan migrate
 5. Create a new Filament user (refer to the Filament documentation)
 [https://filamentphp.com/docs/2.x/admin/installation#installation](https://filamentphp.com/docs/2.x/admin/installation#installation)
 
-6. Server your project
+6. Serve your project
 ```bash
 php artisan serve
 ```
