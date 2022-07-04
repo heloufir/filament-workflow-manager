@@ -2,6 +2,10 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1 - 2022-07-04
+
+- First stable version
+
 ## 1.0.7 - 2022-07-04
 
 - Update views 
