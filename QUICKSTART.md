@@ -10,7 +10,7 @@ laravel new MyProject
 composer require heloufir/filament-workflow-manager
 ```
 
-3. Register package into your application providers `config/app.php`
+3. Register the package into your application providers `config/app.php`
 ```bash
 \Heloufir\FilamentWorkflowManager\FilamentWorkflowManagerServiceProvider::class,
 ```
@@ -23,7 +23,7 @@ php artisan migrate
 5. Create a new Filament user (refer to the Filament documentation)
 [https://filamentphp.com/docs/2.x/admin/installation#installation](https://filamentphp.com/docs/2.x/admin/installation#installation)
 
-6. Server your project
+6. Serve your project
 ```bash
 php artisan serve
 ```
@@ -53,6 +53,8 @@ class Project extends Model implements HasWorkflow
 Here you need to add the implementation of the interface `InteractsWithWorkflows` and add the use of the trait `InteractsWithWorkflows` to your model.
 
 3. Create a workflow
+
+
 After you have configured your model, you can now create a workflow linked to this model, watch the following demo video:
 [![Watch the demo video](filament-workflow-manager-demo-play.png)](https://user-images.githubusercontent.com/6197875/177192142-6ea200cb-9d2b-4bb3-a2b2-d65e25a4da66.mp4)
 
