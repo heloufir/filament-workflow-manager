@@ -1,0 +1,26 @@
+{
+    "name": "heloufir/filament-workflow-manager",
+    "description": "Manage your own workflows with filament",
+    "keywords": [
+        "filament",
+        "workflow"
+    ],
+    "homepage": "https://github.com/heloufir/filament-workflow-manager",
+    "require": {
+        "filament/filament": "^2.13"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Heloufir\\FilamentWorkflowManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EL OUFIR Hatim",
+            "email": "eloufirhatim@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
