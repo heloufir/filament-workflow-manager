@@ -23,7 +23,10 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
            '2022_07_01_120853_create_workflow_models_table',
            '2022_07_01_214028_create_workflow_model_statuses_table',
         ]);
-        $package->runsMigrations = true;
+        $package->runsMigrations();
+
+        // Translations
+        $package->hasTranslations();
 
         // Helpers file
         if (file_exists($file = __DIR__ . '/../src/helpers.php'))
