@@ -28,6 +28,10 @@ php artisan vendor:publish --tag="filament-workflow-manager-migrations"
 php artisan vendor:publish --tag="filament-workflow-manager-config"
 ```
 
+## Quick start
+Please read the following steps to understand how to use this package.
+[Quick start steps](QUICKSTART.md)
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
