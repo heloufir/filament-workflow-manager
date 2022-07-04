@@ -13,13 +13,13 @@
             <div class="flex flex-col gap-4 md:justify-between md:items-start md:flex-row md:-mr-2">
                 <div>
                     <h2 class="text-xl font-bold tracking-tight filament-tables-header-heading">
-                        @lang('filament-workflow-manager.resources.workflow.page.workflow.heading')
+                        @lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.heading')
                     </h2>
                     <p class="text-gray-900 filament-tables-header-description">
                     </p>
                 </div>
                 <div>
-                    <x-filament::button wire:click="add_status" type="button">@lang('filament-workflow-manager.resources.workflow.page.workflow.actions.add_status')</x-filament::button>
+                    <x-filament::button wire:click="add_status" type="button">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.actions.add_status')</x-filament::button>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
         <div class="dialog fixed py-5 top-0 right-0 bottom-0 left-0 bg-gray-500 bg-opacity-50 z-50 flex flex-col justify-center items-center">
             <div class="bg-white md:w-2/6 sm:w-5/6 w-5/6 py-5 rounded-lg border border-gray-200 shadow flex flex-col justify-center items-center">
                 <div class="w-full flex flex-row justify-start items-center px-5 mb-5 pb-5 border-b border-gray-200">
-                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager.resources.workflow.page.workflow.modal.edit.title')</span>
+                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
                     <livewire:workflow-manager-edit :record="$to_edit"></livewire:workflow-manager-edit>
@@ -70,7 +70,7 @@
         <div class="dialog fixed py-5 top-0 right-0 bottom-0 left-0 bg-gray-500 bg-opacity-50 z-50 flex flex-col justify-center items-center">
             <div class="bg-white md:w-2/6 sm:w-5/6 w-5/6 py-5 rounded-lg border border-gray-200 shadow flex flex-col justify-center items-center">
                 <div class="w-full flex flex-row justify-start items-center px-5 mb-5 pb-5 border-b border-gray-200">
-                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager.resources.workflow.page.workflow.modal.delete.title')</span>
+                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.delete.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
                     <livewire:workflow-manager-delete :record="$to_delete"></livewire:workflow-manager-delete>
@@ -83,7 +83,7 @@
         <div class="dialog fixed py-5 top-0 right-0 bottom-0 left-0 bg-gray-500 bg-opacity-50 z-50 flex flex-col justify-center items-center">
             <div class="bg-white md:w-2/6 sm:w-5/6 w-5/6 py-5 rounded-lg border border-gray-200 shadow flex flex-col justify-center items-center">
                 <div class="w-full flex flex-row justify-start items-center px-5 mb-5 pb-5 border-b border-gray-200">
-                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager.resources.workflow.page.workflow.modal.add.title')</span>
+                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
                     <livewire:workflow-manager-add :record="$to_add" :workflow="$record"></livewire:workflow-manager-add>
@@ -96,7 +96,7 @@
         <div class="dialog fixed py-5 top-0 right-0 bottom-0 left-0 bg-gray-500 bg-opacity-50 z-50 flex flex-col justify-center items-center">
             <div class="bg-white md:w-2/6 sm:w-5/6 w-5/6 py-5 rounded-lg border border-gray-200 shadow flex flex-col justify-center items-center">
                 <div class="w-full flex flex-row justify-start items-center px-5 mb-5 pb-5 border-b border-gray-200">
-                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.title')</span>
+                    <span class="text-medium text-xl text-gray-700">@lang('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.title')</span>
                 </div>
                 <div class="w-full flex flex-col justify-start items-start">
                     <livewire:workflow-manager-add-status></livewire:workflow-manager-add-status>
