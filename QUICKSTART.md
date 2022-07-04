@@ -114,7 +114,7 @@ class EditMyModel extends EditRecord
 // ...
 use Heloufir\FilamentWorkflowManager\Core\WorkflowResource;
 
-class EditMyModel extends CreateRecord
+class CreateMyModel extends CreateRecord
 {
     use WorkflowResource;
 
