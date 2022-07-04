@@ -7,7 +7,7 @@ use Heloufir\FilamentWorkflowManager\Models\WorkflowModel;
 
 class WorkflowManager extends RelationManager
 {
-    protected static string $view = 'filament.resources.workflow-resource.pages.workflow-manager';
+    protected static string $view = 'filament-workflow-manager::filament.resources.workflow-resource.pages.workflow-manager';
 
     protected static string $relationship = 'workflow_models';
 

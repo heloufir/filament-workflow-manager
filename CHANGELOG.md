@@ -2,6 +2,16 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.0.4 - 2022-07-04
+
+- Add views 
+  - Add package views to configuration
+
+## 1.0.3 - 2022-07-04
+
+- Update translations 
+  - Update translations path in views, resources, ...
+
 ## 1.0.2 - 2022-07-04
 
 - Add translations 

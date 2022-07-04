@@ -28,6 +28,9 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
         // Translations
         $package->hasTranslations();
 
+        // Views
+        $package->hasViews();
+
         // Helpers file
         if (file_exists($file = __DIR__ . '/../src/helpers.php'))
         {

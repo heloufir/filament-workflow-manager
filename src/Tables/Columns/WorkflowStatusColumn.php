@@ -6,7 +6,7 @@ use Filament\Tables\Columns\Column;
 
 class WorkflowStatusColumn extends Column
 {
-    protected string $view = 'tables.columns.workflow-status-column';
+    protected string $view = 'filament-workflow-manager::tables.columns.workflow-status-column';
 
     public static function make(string $name = null): static
     {
