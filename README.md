@@ -1,4 +1,4 @@
-# Filament Spatie Laravel Backup
+# Filament Workflow Manager
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/heloufir/filament-workflow-manager.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-workflow-manager)
 [![Total Downloads](https://img.shields.io/packagist/dt/heloufir/filament-workflow-manager.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-workflow-manager)
