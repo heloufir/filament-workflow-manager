@@ -190,7 +190,7 @@ From the version `1.1.4` of this package, on each status update the event `Workf
     "workflow_status_id": 1,
     "workflow_status": {
       "id": 3,
-      "modelable_type": "App\\Models\\Project",
+      "modelable_type": "App\\Models\\MyModel",
       "modelable_id": 3,
       "workflow_status_id": "2",
       "created_at": "2022-07-05T14:23:33.000000Z",
@@ -223,7 +223,7 @@ So to listen to this event you can define a function like below:
 ```php
 <?php
 
-namespace App\Filament\Resources\ProjectResource\Pages;
+namespace App\Filament\Resources\MyModelResource\Pages;
 
 use Heloufir\FilamentWorkflowManager\Core\WorkflowResource;
 use App\Filament\Resources\MyModelResource;
