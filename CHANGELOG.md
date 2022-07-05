@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.2 - 2022-07-04
+
+- Add translations (fr / ar)
+  - Add translations (fr / ar) and add compatibility for RTL design
+
 ## 1.1.1 - 2022-07-04
 
 - Fix typo
