@@ -2,6 +2,7 @@
 
 return [
     'resources' => [
+        'title' => 'Workflows',
         'workflow' => [
             'table' => [
                 'name' => 'Name',
@@ -74,5 +75,22 @@ return [
                 ],
             ],
         ],
-    ]
+    ],
+    'page' => [
+        'history' => [
+            'title' => 'Workflow history',
+            'table' => [
+                'old_status' => 'Old status',
+                'new_status' => 'New status',
+                'changed_by' => 'Changed by',
+                'changed_at' => 'Changed at',
+                'filter' => [
+                    'statuses' => 'Statuses'
+                ],
+            ],
+            'data' => [
+                'date_format' => 'Y-m-d g:i a',
+            ],
+        ],
+    ],
 ];

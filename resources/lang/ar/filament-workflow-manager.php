@@ -2,6 +2,7 @@
 
 return [
     'resources' => [
+        'title' => 'سير العمل',
         'workflow' => [
             'table' => [
                 'name' => 'الاسم',
@@ -74,5 +75,22 @@ return [
                 ],
             ],
         ],
-    ]
+    ],
+    'page' => [
+        'history' => [
+            'title' => 'سجل سير العمل',
+            'table' => [
+                'old_status' => 'الوضع القديم',
+                'new_status' => 'الوضع الجديد',
+                'changed_by' => 'تم التغيير من قبل',
+                'changed_at' => 'تم التغيير في',
+                'filter' => [
+                    'statuses' => 'الحالات'
+                ],
+            ],
+            'data' => [
+                'date_format' => 'Y-m-d H:i:s',
+            ],
+        ],
+    ],
 ];

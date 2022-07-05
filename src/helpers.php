@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+use Filament\Tables\Actions\Action;
+
 if (!function_exists('workflow_status_color_brihtness')) {
 
     function workflow_status_color_brihtness($color)
@@ -22,6 +25,21 @@ if (!function_exists('workflow_status_color_styles')) {
             $text_color = '#ffffff';
         }
         return 'background-color: ' . $background_color . '; color: ' . $text_color . ';';
+    }
+
+}
+
+if (!function_exists('workflow_resources_history')) {
+
+    function workflow_resources_history()
+    {
+        return Action::make('workflow_history')
+            ->label('History')
+            ->color('success')
+            ->icon('heroicon-o-adjustments')
+            ->link()
+            ->url(fn(Model $record) => route('filament.pages.workflow-history/{id}/{model}', ['id' => $record->id, 'model' => get_class($record)]))
+            ->openUrlInNewTab();
     }
 
 }

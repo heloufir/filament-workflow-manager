@@ -2,6 +2,7 @@
 
 return [
     'resources' => [
+        'title' => 'Flux de travail',
         'workflow' => [
             'table' => [
                 'name' => 'Nom',
@@ -74,5 +75,22 @@ return [
                 ],
             ],
         ],
-    ]
+    ],
+    'page' => [
+        'history' => [
+            'title' => 'Historique du flux de travail',
+            'table' => [
+                'old_status' => 'Ancien statut',
+                'new_status' => 'Nouveau statut',
+                'changed_by' => 'Modifié par',
+                'changed_at' => 'Modifié le',
+                'filter' => [
+                    'statuses' => 'Statuts'
+                ],
+            ],
+            'data' => [
+                'date_format' => 'Y-m-d H:i:s',
+            ],
+        ],
+    ],
 ];

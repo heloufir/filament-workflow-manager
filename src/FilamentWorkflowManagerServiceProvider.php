@@ -27,6 +27,7 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
            '2022_07_01_120850_create_workflows_table',
            '2022_07_01_120853_create_workflow_models_table',
            '2022_07_01_214028_create_workflow_model_statuses_table',
+           '2022_07_05_105319_create_workflow_histories_table',
         ]);
         $package->runsMigrations();
 
@@ -60,6 +61,11 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
     protected function getResources(): array
     {
         return config('filament-workflow-manager.resources');
+    }
+
+    protected function getPages(): array
+    {
+        return config('filament-workflow-manager.pages');
     }
 
     protected function getStyles(): array

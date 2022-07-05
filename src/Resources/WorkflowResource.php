@@ -24,6 +24,11 @@ class WorkflowResource extends Resource
 
     protected static ?string $navigationGroup = 'Settings';
 
+    protected static function getNavigationLabel(): string
+    {
+        return trans('filament-workflow-manager::filament-workflow-manager.resources.title');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
