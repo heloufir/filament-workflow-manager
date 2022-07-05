@@ -121,3 +121,28 @@ class CreateMyModel extends CreateRecord
     // ...
 }
 ```
+
+----
+
+## History system
+From the version `1.1.3` of this package, the history system is now available, and you can use it as below:
+
+```
+Important: Automatically the package will create an history row in the database, after all status update of your models
+```
+
+To show the history inside your Filament resource table you only need to add `workflow_resources_history()` function call in your table's actions:
+
+```php
+// ...
+->actions([
+    // ...
+
+    workflow_resources_history()
+])
+// ...
+```
+
+This helper function will show a link action `History`.
+
+When the user clicks on this link, a new tab will open and will display a table containing the history of all status changes.
