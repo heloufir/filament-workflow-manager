@@ -154,7 +154,7 @@ From the version `1.1.4` of this package, on each status update the event `Workf
 
 | Field      | Type                                                     | Description                                                                                                                               |
 |------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| type       | `string`                                                 | This field will contain `update` if the event is fired after the model update, or `create` if the event if fired after the model creation |
+| type       | `string`                                                 | This field will contain `update` if the event is fired after the model update, or `create` if the event is fired after the model creation |
 | old_status | `Heloufir\FilamentWorkflowManager\Models\WorkflowStatus` | The model old status (before update)                                                                                                      |
 | new_status | `Heloufir\FilamentWorkflowManager\Models\WorkflowStatus` | The model new status (after update)                                                                                                       |
 | model      | `Illuminate\Database\Eloquent\Model`                     | The model updated                                                                                                                         |
