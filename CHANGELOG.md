@@ -2,6 +2,10 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.4 - 2022-07-05
+
+- Add events
+
 ## 1.1.3 - 2022-07-05
 
 - History system
