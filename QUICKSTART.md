@@ -146,3 +146,101 @@ To show the history inside your Filament resource table you only need to add `wo
 This helper function will show a link action `History`.
 
 When the user clicks on this link, a new tab will open and will display a table containing the history of all status changes.
+
+## Events handler
+From the version `1.1.4` of this package, on each status update the event `WorkflowStatusUpdated` is fired with a details object.
+
+### Details object definition
+
+| Field      | Type                                                     | Description                                                                                                                               |
+|------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| type       | `string`                                                 | This field will contain `update` if the event is fired after the model update, or `create` if the event if fired after the model creation |
+| old_status | `Heloufir\FilamentWorkflowManager\Models\WorkflowStatus` | The model old status (before update)                                                                                                      |
+| new_status | `Heloufir\FilamentWorkflowManager\Models\WorkflowStatus` | The model new status (after update)                                                                                                       |
+| model      | `Illuminate\Database\Eloquent\Model`                     | The model updated                                                                                                                         |
+| user       | `App\Models\User` or your customized `User` model        | The user that performed the action                                                                                                        |
+
+
+### Details object example
+
+```json
+{
+  "type": "update",
+  "old_status": {
+    "id": 1,
+    "name": "Created",
+    "color": "#f4f6f7",
+    "created_at": "2022-07-05T13:56:50.000000Z",
+    "updated_at": "2022-07-05T13:56:50.000000Z",
+    "deleted_at": null
+  },
+  "new_status": {
+    "id": 1,
+    "name": "Created",
+    "color": "#f4f6f7",
+    "created_at": "2022-07-05T13:56:50.000000Z",
+    "updated_at": "2022-07-05T13:56:50.000000Z",
+    "deleted_at": null
+  },
+  "model": {
+    "id": 3,
+    "name": "My model name",
+    "created_at": "2022-07-05T14:23:33.000000Z",
+    "updated_at": "2022-07-05T14:23:33.000000Z",
+    "workflow_status_id": 1,
+    "workflow_status": {
+      "id": 3,
+      "modelable_type": "App\\Models\\Project",
+      "modelable_id": 3,
+      "workflow_status_id": "2",
+      "created_at": "2022-07-05T14:23:33.000000Z",
+      "updated_at": "2022-07-05T14:23:36.000000Z",
+      "status": {
+        "id": 1,
+        "name": "Created",
+        "color": "#f4f6f7",
+        "created_at": "2022-07-05T13:56:50.000000Z",
+        "updated_at": "2022-07-05T13:56:50.000000Z",
+        "deleted_at": null
+      }
+    }
+  },
+  "user": {
+    "id": 1,
+    "name": "EL OUFIR Hatim",
+    "email": "eloufirhatim@gmail.com",
+    "email_verified_at": null,
+    "created_at": "2022-07-05T13:43:57.000000Z",
+    "updated_at": "2022-07-05T13:43:57.000000Z"
+  }
+}
+```
+
+### Usage example
+
+So to listen to this event you can define a function like below:
+
+```php
+<?php
+
+namespace App\Filament\Resources\ProjectResource\Pages;
+
+use Heloufir\FilamentWorkflowManager\Core\WorkflowResource;
+use App\Filament\Resources\MyModelResource;
+use Filament\Resources\Pages\EditRecord;
+
+class EditMyModel extends EditRecord
+{
+    use WorkflowResource;
+
+    protected $listeners = ['WorkflowStatusUpdated' => 'status_updated'];
+
+    protected static string $resource = MyModelResource::class;
+
+    public function status_updated($obj)
+    {
+        dd($obj); // $obj is the details object defined before
+    }
+}
+
+```
