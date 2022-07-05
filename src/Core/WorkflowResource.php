@@ -13,6 +13,7 @@ trait WorkflowResource
         $data = $this->form->getState();
         $this->record->workflow_status->workflow_status_id = $data['workflow_status_id'];
         $this->record->workflow_status->save();
+        $this->record->refresh();
         $this->saveHistory($old_status->id);
         if ($old_status->id !== $this->record->workflow_status->workflow_status_id) {
             $this->emit('WorkflowStatusUpdated', [

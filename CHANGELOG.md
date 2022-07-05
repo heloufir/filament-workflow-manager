@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.5 - 2022-07-05
+
+- Bug-fix
+  - Wrong new_status returned on event details object, fixed.
+
 ## 1.1.4 - 2022-07-05
 
 - Add events
