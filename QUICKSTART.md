@@ -42,7 +42,7 @@ use Heloufir\FilamentWorkflowManager\Core\HasWorkflow;
 use Heloufir\FilamentWorkflowManager\Core\InteractsWithWorkflows;
 // ...
 
-class Project extends Model implements HasWorkflow
+class MyModel extends Model implements HasWorkflow
 {
     use InteractsWithWorkflows;
     
