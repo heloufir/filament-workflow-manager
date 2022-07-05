@@ -1,9 +1,11 @@
 ## Installation
 
-1. Create a Laravel project
+1. Create a Laravel project and configure Filament on this project
+
 ```bash
 laravel new MyProject
 ```
+Refer to Filament documentation: https://filamentphp.com/docs/2.x/admin/installation#installation
 
 2. Install the package
 ```bash
