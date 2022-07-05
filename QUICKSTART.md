@@ -176,8 +176,8 @@ From the version `1.1.4` of this package, on each status update the event `Workf
   },
   "new_status": {
     "id": 1,
-    "name": "Created",
-    "color": "#f4f6f7",
+    "name": "Submitted",
+    "color": "#cecece",
     "created_at": "2022-07-05T13:56:50.000000Z",
     "updated_at": "2022-07-05T13:56:50.000000Z",
     "deleted_at": null
