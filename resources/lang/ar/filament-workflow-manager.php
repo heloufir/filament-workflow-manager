@@ -76,6 +76,26 @@ return [
                 ],
             ],
         ],
+        'permissions' => [
+            'title' => 'أذونات سير العمل',
+            'model' => 'الإذن',
+            'table' => [
+                'role' => 'دور',
+                'models' => 'الانتقالات'
+            ],
+            'form' => [
+                'transition' => 'من :status_from الى :status_to'
+            ],
+            'user-relation' => [
+                'title' => 'أذونات سير العمل',
+                'label' => 'الإذن',
+                'table' => [
+                    'workflow' => 'سير العمل',
+                    'permission' => 'الإذن',
+                    'models' => 'الانتقالات'
+                ],
+            ],
+        ],
     ],
     'page' => [
         'history' => [

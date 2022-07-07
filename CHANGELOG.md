@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.8 - 2022-07-07
+
+- Permisions
+  - Add workflow permissions to manage users having access to different workflow transitions
+
 ## 1.1.7 - 2022-07-07
 
 - Design enhancement

@@ -34,6 +34,7 @@ trait InteractsWithWorkflows
         if ($workflow) {
             return WorkflowModel::where('workflow_id', $workflow->id)
                 ->where('status_from_id', $this->workflow_status->status->id)
+                ->whereIn('status_to_id', auth()->user()->workflow_permissions->pluck('workflow_models_objects')->flatten()->pluck('status_to_id')->toArray())
                 ->get()
                 ->pluck('status_to');
         }

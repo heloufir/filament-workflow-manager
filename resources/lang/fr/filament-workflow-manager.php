@@ -76,6 +76,26 @@ return [
                 ],
             ],
         ],
+        'permissions' => [
+            'title' => 'Permissions du flux de travail',
+            'model' => 'Permission',
+            'table' => [
+                'role' => 'Rôle',
+                'models' => 'Transitions'
+            ],
+            'form' => [
+                'transition' => 'De :status_from A :status_to'
+            ],
+            'user-relation' => [
+                'title' => 'Permissions du flux de travail',
+                'label' => 'permission',
+                'table' => [
+                    'workflow' => 'Flux de travail',
+                    'permission' => 'Permission',
+                    'models' => 'Transitions'
+                ],
+            ],
+        ],
     ],
     'page' => [
         'history' => [

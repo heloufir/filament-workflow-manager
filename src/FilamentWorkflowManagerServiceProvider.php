@@ -7,6 +7,7 @@ use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerAddStatus;
 use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerDelete;
 use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerEdit;
 use Filament\PluginServiceProvider;
+use Heloufir\FilamentWorkflowManager\Resources\UserResource\WorkflowPermissions;
 use Spatie\LaravelPackageTools\Package;
 use Livewire\Livewire;
 
@@ -23,12 +24,14 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
 
         // Migrations
         $package->hasMigrations([
-           '2022_07_01_120846_create_workflow_statuses_table',
-           '2022_07_01_120850_create_workflows_table',
-           '2022_07_01_120853_create_workflow_models_table',
-           '2022_07_01_214028_create_workflow_model_statuses_table',
-           '2022_07_05_105319_create_workflow_histories_table',
-           '2022_07_07_084149_add_is_end_to_workflow_status',
+            '2022_07_01_120846_create_workflow_statuses_table',
+            '2022_07_01_120850_create_workflows_table',
+            '2022_07_01_120853_create_workflow_models_table',
+            '2022_07_01_214028_create_workflow_model_statuses_table',
+            '2022_07_05_105319_create_workflow_histories_table',
+            '2022_07_07_084149_add_is_end_to_workflow_status',
+            '2022_07_07_101352_create_workflow_permissions_table',
+            '2022_07_07_101358_create_workflow_user_permissions_table',
         ]);
         $package->runsMigrations();
 
@@ -39,8 +42,7 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
         $package->hasViews();
 
         // Helpers file
-        if (file_exists($file = __DIR__ . '/../src/helpers.php'))
-        {
+        if (file_exists($file = __DIR__ . '/../src/helpers.php')) {
             require $file;
         }
     }
@@ -54,6 +56,7 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
                      WorkflowManagerEdit::class,
                      WorkflowManagerDelete::class,
                      WorkflowManagerAddStatus::class,
+                     WorkflowPermissions::class
                  ] as $component) {
             Livewire::component($component::getName(), $component);
         }

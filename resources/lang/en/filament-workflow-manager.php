@@ -76,6 +76,26 @@ return [
                 ],
             ],
         ],
+        'permissions' => [
+            'title' => 'Workflow permissions',
+            'model' => 'Permission',
+            'table' => [
+                'role' => 'Role',
+                'models' => 'Transitions'
+            ],
+            'form' => [
+                'transition' => 'From :status_from To :status_to'
+            ],
+            'user-relation' => [
+                'title' => 'Workflow permissions',
+                'label' => 'permission',
+                'table' => [
+                    'workflow' => 'Workflow',
+                    'permission' => 'Permission',
+                    'models' => 'Transitions'
+                ],
+            ],
+        ],
     ],
     'page' => [
         'history' => [

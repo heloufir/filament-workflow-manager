@@ -13,6 +13,7 @@ use Filament\Tables\Columns;
 use Heloufir\FilamentWorkflowManager\Models\Workflow;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Builder;
+use Heloufir\FilamentWorkflowManager\Resources\WorkflowResource\Relations;
 
 class WorkflowResource extends Resource
 {
@@ -79,7 +80,8 @@ class WorkflowResource extends Resource
     public static function getRelations(): array
     {
         return [
-            \Heloufir\FilamentWorkflowManager\Resources\WorkflowResource\Relations\WorkflowManager::class
+            Relations\WorkflowManager::class,
+            Relations\WorkflowPermission::class,
         ];
     }
 

@@ -20,4 +20,9 @@ class Workflow extends Model
     {
         return $this->hasMany(WorkflowModel::class)->whereNull('status_from_id');
     }
+
+    public function workflow_permissions(): HasMany
+    {
+        return $this->hasMany(WorkflowPermission::class);
+    }
 }

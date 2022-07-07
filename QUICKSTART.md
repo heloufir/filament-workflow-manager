@@ -254,3 +254,42 @@ From the version `1.1.6` of this package, you can add an end flag to a workflow 
 
 **Important:** You cannot add a transition after another transition based on a to status flagged as _end of workflow_.
 
+## Permissions
+From the version `1.1.8` of this package, you can manage workflow permissions of your users.
+
+### Configuration
+To configure your `User` model to use workflow permissions, you need to use the `WorkflowPermissions` trait:
+
+```php
+use Heloufir\FilamentWorkflowManager\Core\WorkflowPermissions;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    use WorkflowPermissions;
+    
+    // ...
+}
+```
+
+After that, in you Filament user resource, you need to add the `WorkflowPermissions` relation:
+
+```php
+use Heloufir\FilamentWorkflowManager\Resources\UserResource\WorkflowPermissions;
+
+public static function getRelations(): array
+{
+    return [
+        WorkflowPermissions::class,
+    ];
+}
+```
+
+### Usage example
+In the workflow manage page you can create multiple access level to your workflow transitions, as below:
+
+![Workflow permissions](filament-workflow-manager-permissions-demo.png)
+
+After you have created your workflow permissions, you can attach them to your users:
+
+![Workflow permissions](filament-workflow-manager-user-permissions-demo.png)

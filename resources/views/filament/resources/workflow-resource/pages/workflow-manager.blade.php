@@ -6,8 +6,6 @@
 
 <div class="border border-gray-300 shadow-sm bg-white rounded-xl filament-tables-container">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
     <div class="px-2 pt-2">
         <div class="px-4 py-2 filament-tables-header mb-2">
             <div class="flex flex-col gap-4 md:justify-between md:items-start md:flex-row md:-mr-2">
@@ -24,7 +22,7 @@
             </div>
         </div>
 
-        <div aria-hidden="true" class="border-t filament-hr" xshow="true || selectedRecords.length" x-show="true || selectedRecords.length"></div>
+        <div aria-hidden="true" class="border-t filament-hr"></div>
     </div>
 
     <div class="w-full p-5">

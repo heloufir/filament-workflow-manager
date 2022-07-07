@@ -5,7 +5,7 @@
 
 This package provides a Filament resource where you can configure and manager your workflows, and also provides some functions, helpers, traits, ... to help you attach statuses to your configured models.
 
-![Backups - Filament Demo](filament-workflow-manager-demo.jpg)
+![Filament Workflow Manager](filament-workflow-manager-demo.jpg)
 
 
 ## Installation
