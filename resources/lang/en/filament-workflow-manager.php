@@ -21,15 +21,15 @@ return [
                         'edit' => [
                             'title' => 'Edit transition',
                             'form' => [
-                                'status_from' => 'From status',
-                                'status_to' => 'To status',
-                                'status_from_color' => 'From status color',
-                                'status_to_color' => 'To status color',
+                                'status_name' => 'Status name',
+                                'status_color' => 'Color',
+                                'is_end' => 'End of workflow',
                                 'submit' => 'Edit',
                                 'cancel' => 'Cancel',
                             ],
                             'messages' => [
-                                'submitted' => 'Transition saved!'
+                                'submitted' => 'Transition saved!',
+                                'cannot_end_workflow' => 'Cannot use as end workflow, the status is used as from status!',
                             ],
                         ],
                         'delete' => [
@@ -63,6 +63,7 @@ return [
                             'form' => [
                                 'name' => 'Name',
                                 'color' => 'Color',
+                                'is_end' => 'End of workflow',
                                 'submit' => 'Add',
                                 'cancel' => 'Cancel',
                             ],

@@ -244,3 +244,9 @@ class EditMyModel extends EditRecord
 }
 
 ```
+
+## End of workflow
+From the version `1.1.6` of this package, you can add an end flag to a workflow status to detect if it's the end of the workflow.
+
+**Important:** You cannot add a transition after another transition based on a to status flagged as _end of workflow_.
+

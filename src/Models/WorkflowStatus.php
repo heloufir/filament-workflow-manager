@@ -12,6 +12,7 @@ class WorkflowStatus extends Model
 
     protected $fillable = [
         'name',
-        'color'
+        'color',
+        'is_end'
     ];
 }

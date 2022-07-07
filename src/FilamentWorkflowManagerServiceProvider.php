@@ -28,6 +28,7 @@ class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
            '2022_07_01_120853_create_workflow_models_table',
            '2022_07_01_214028_create_workflow_model_statuses_table',
            '2022_07_05_105319_create_workflow_histories_table',
+           '2022_07_07_084149_add_is_end_to_workflow_status',
         ]);
         $package->runsMigrations();
 

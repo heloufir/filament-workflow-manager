@@ -9,6 +9,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Heloufir\FilamentWorkflowManager\Models\WorkflowModel;
 use Heloufir\FilamentWorkflowManager\Models\WorkflowStatus;
+use Illuminate\Database\Schema\Builder;
 use Livewire\Component;
 
 class WorkflowManagerEdit extends Component implements HasForms
@@ -19,7 +20,11 @@ class WorkflowManagerEdit extends Component implements HasForms
 
     public function mount()
     {
-        $this->form->fill($this->record->fresh(['status_from', 'status_to'])->toArray());
+        $this->form->fill([
+            'name' => $this->record?->status_to?->name,
+            'color' => $this->record?->status_to?->color,
+            'is_end' => $this->record?->status_to?->is_end
+        ]);
     }
 
     public function render()
@@ -30,45 +35,33 @@ class WorkflowManagerEdit extends Component implements HasForms
     protected function getFormSchema(): array
     {
         return [
+            Components\TextInput::make('name')
+                ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_name'))
+                ->required()
+                ->maxLength(Builder::$defaultStringLength),
 
-            Components\Grid::make(2)
-                ->schema([
-                    Components\Select::make('status_from_id')
-                        ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_from'))
-                        ->options(WorkflowStatus::all()->pluck('name', 'id'))
-                        ->disabled(),
+            Components\ColorPicker::make('color')
+                ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_color'))
+                ->required(),
 
-                    Components\ColorPicker::make('status_from.color')
-                        ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_from_color'))
-                        ->disabled(fn(Closure $get) => !$get('status_from_id'))
-                        ->required(fn(Closure $get) => $get('status_from_id')),
-                ]),
-
-            Components\Grid::make(2)
-                ->schema([
-                    Components\Select::make('status_to_id')
-                        ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_to'))
-                        ->options(WorkflowStatus::all()->pluck('name', 'id'))
-                        ->disabled(),
-
-                    Components\ColorPicker::make('status_to.color')
-                        ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.status_to_color'))
-                        ->required(),
-                ])
+            Components\Checkbox::make('is_end')
+                ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.form.is_end')),
         ];
     }
 
     public function submit()
     {
         $data = $this->form->getState();
-        if ($this->record->status_from_id) {
-            $this->record->status_from->color = $data['status_from']['color'];
-            $this->record->status_from->save();
+        if ($data['is_end'] && WorkflowModel::where('workflow_id', $this->record->workflow->id)->where('status_from_id', $this->record->status_to_id)->count()) {
+            Filament::notify('warning', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.messages.cannot_end_workflow'));
+        } else {
+            $this->record->status_to->name = $data['name'];
+            $this->record->status_to->color = $data['color'];
+            $this->record->status_to->is_end = $data['is_end'];
+            $this->record->status_to->save();
+            Filament::notify('success', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.messages.submitted'));
+            $this->emit('close_workflow_manager_edit_dialog');
         }
-        $this->record->status_to->color = $data['status_to']['color'];
-        $this->record->status_to->save();
-        Filament::notify('success', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.edit.messages.submitted'));
-        $this->emit('close_workflow_manager_edit_dialog');
     }
 
     public function cancel()

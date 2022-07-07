@@ -21,15 +21,15 @@ return [
                         'edit' => [
                             'title' => 'تعديل الانتقال',
                             'form' => [
-                                'status_from' => 'من الوضع',
-                                'status_to' => 'إلى الوضع',
-                                'status_from_color' => 'لون حالة المصدر',
-                                'status_to_color' => 'لون حالة الوجهة',
+                                'status_name' => 'اسم الحالة',
+                                'status_color' => 'اللون',
+                                'is_end' => 'نهاية سير العمل',
                                 'submit' => 'تعديل',
                                 'cancel' => 'الغاء',
                             ],
                             'messages' => [
-                                'submitted' => 'انتقال مسجل !'
+                                'submitted' => 'انتقال مسجل !',
+                                'cannot_end_workflow' => 'لا يمكن استخدامه كسير عمل نهائي ، يتم استخدام الحالة اعتبارًا من الحالة!',
                             ],
                         ],
                         'delete' => [
@@ -63,6 +63,7 @@ return [
                             'form' => [
                                 'name' => 'الاسم',
                                 'color' => 'اللون',
+                                'is_end' => 'نهاية سير العمل',
                                 'submit' => 'أضف',
                                 'cancel' => 'الغاء',
                             ],

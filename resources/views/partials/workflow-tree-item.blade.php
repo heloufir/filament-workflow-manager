@@ -5,9 +5,11 @@
             <button class="delete-btn" wire:click="delete_node({{ $item }})">
                 <x-heroicon-o-x class="w-3 h-3"></x-heroicon-o-x>
             </button>
-            <button class="add-btn" wire:click="add_node({{ $item }})">
-                <x-heroicon-o-plus class="w-3 h-3"></x-heroicon-o-plus>
-            </button>
+            @if(!$item->status_to->is_end)
+                <button class="add-btn" wire:click="add_node({{ $item }})">
+                    <x-heroicon-o-plus class="w-3 h-3"></x-heroicon-o-plus>
+                </button>
+            @endif
             <button class="edit-btn" wire:click="edit_node({{ $item }})">
                 <x-heroicon-o-pencil class="w-3 h-3"></x-heroicon-o-pencil>
             </button>

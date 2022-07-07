@@ -21,15 +21,15 @@ return [
                         'edit' => [
                             'title' => 'Modifier la transition',
                             'form' => [
-                                'status_from' => 'Depuis le statut',
-                                'status_to' => 'Vers le statut',
-                                'status_from_color' => 'Couleur du statut source',
-                                'status_to_color' => 'Couleur du statut destination',
+                                'status_name' => 'Nom du statut',
+                                'status_color' => 'Couleur',
+                                'is_end' => 'Fin du flux de travail',
                                 'submit' => 'Modifier',
                                 'cancel' => 'Annuler',
                             ],
                             'messages' => [
-                                'submitted' => 'Transition enregistrée !'
+                                'submitted' => 'Transition enregistrée !',
+                                'cannot_end_workflow' => 'Ne peut pas être utilisé comme workflow de fin, le statut est utilisé comme statut de départ!',
                             ],
                         ],
                         'delete' => [
@@ -63,6 +63,7 @@ return [
                             'form' => [
                                 'name' => 'Nom',
                                 'color' => 'Couleur',
+                                'is_end' => 'Fin du flux de travail',
                                 'submit' => 'Ajouter',
                                 'cancel' => 'Annuler',
                             ],

@@ -20,6 +20,7 @@ class WorkflowManagerAddStatus extends Component implements HasForms
         $this->form->fill([
             'name' => null,
             'color' => '#f3f4f6',
+            'is_end' => false
         ]);
     }
 
@@ -43,6 +44,9 @@ class WorkflowManagerAddStatus extends Component implements HasForms
                     Components\ColorPicker::make('color')
                         ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.form.color'))
                         ->required(),
+
+                    Components\Checkbox::make('is_end')
+                        ->label(__('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.form.is_end')),
                 ])
         ];
     }
@@ -53,6 +57,7 @@ class WorkflowManagerAddStatus extends Component implements HasForms
         $model = new WorkflowStatus();
         $model->name = $data['name'];
         $model->color = $data['color'];
+        $model->is_end = $data['is_end'];
         $model->save();
         Filament::notify('success', __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add_status.messages.submitted'));
         $this->emit('close_add_status');

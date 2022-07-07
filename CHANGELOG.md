@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.6 - 2022-07-07
+
+- End of workflow
+  - Add boolean to workflow status to detect the end of workflow
+
 ## 1.1.5 - 2022-07-05
 
 - Bug-fix
