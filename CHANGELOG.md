@@ -2,6 +2,11 @@
 
 All notable changes to `filament-workflow-manager` will be documented in this file.
 
+## 1.1.7 - 2022-07-07
+
+- Design enhancement
+  - Add dashed border design to end workflow statuses
+
 ## 1.1.6 - 2022-07-07
 
 - End of workflow

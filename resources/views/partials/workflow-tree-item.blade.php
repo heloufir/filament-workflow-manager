@@ -1,5 +1,5 @@
 <li>
-    <span style="{{ workflow_status_color_styles($item->status_to->color) }}">
+    <span class="{{ $item->status_to->is_end ? 'end-workflow' : '' }}" style="{{ workflow_status_color_styles($item->status_to->color) }}">
         {{ $item->status_to->name }}
         <div>
             <button class="delete-btn" wire:click="delete_node({{ $item }})">
