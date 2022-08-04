@@ -23,7 +23,7 @@ class WorkflowResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
-    protected static ?string $navigationGroup = 'Settings';
+    protected static ?string $navigationGroup = config('filament-workflow-manager.navigationGroup');
 
     protected static function getNavigationLabel(): string
     {
