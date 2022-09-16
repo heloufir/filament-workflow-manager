@@ -21,9 +21,20 @@ class WorkflowResource extends Resource
 
     protected static ?string $model = Workflow::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static function getNavigationIcon(): string
+    {
+        return config('filament-workflow-manager.navigation_icon') ?? 'heroicon-o-collection';
+    }
 
-    protected static ?string $navigationGroup = 'Settings';
+    protected static function getNavigationGroup(): ?string
+    {
+        return config('filament-workflow-manager.navigation_group');
+    }
+
+    protected static function getNavigationSort(): ?int
+    {
+        return config('filament-workflow-manager.navigation_sort');
+    }
 
     protected static function getNavigationLabel(): string
     {
