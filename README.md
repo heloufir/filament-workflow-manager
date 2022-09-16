@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/heloufir/filament-workflow-manager.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-workflow-manager)
 [![Total Downloads](https://img.shields.io/packagist/dt/heloufir/filament-workflow-manager.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-workflow-manager)
 
-This package provides a Filament resource where you can configure and manager your workflows, and also provides some functions, helpers, traits, ... to help you attach statuses to your configured models.
+This package provides a Filament resource where you can configure and manage your workflows, and also provides some functions, helpers, traits, ... to help you attach statuses to your configured models.
 
 ![Filament Workflow Manager](filament-workflow-manager-demo.jpg)
 
