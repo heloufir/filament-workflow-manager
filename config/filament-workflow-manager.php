@@ -38,7 +38,7 @@ return [
     */
 
     'user_name' => 'name',
-    
+
     /*
     |--------------------------------------------------------------------------
     |  Navigation Group Name
@@ -49,7 +49,7 @@ return [
     */
 
     'navigation_group' => 'Settings',
-    
+
     /*
     |--------------------------------------------------------------------------
     |  Navigation Sort
@@ -60,7 +60,7 @@ return [
     */
 
     'navigation_sort' => 1,
-    
+
     /*
     |--------------------------------------------------------------------------
     |  Navigation Icon
@@ -85,5 +85,17 @@ return [
     'styles' => [
 
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    |  Permissions enabled
+    |--------------------------------------------------------------------------
+    |
+    | This is the configuration where you can enable or disable the
+    | workflow permissions
+    |
+    */
+
+    'permissions_enabled' => true,
 
 ];
