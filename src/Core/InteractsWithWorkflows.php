@@ -32,11 +32,13 @@ trait InteractsWithWorkflows
     {
         $workflow = $this->workflow;
         if ($workflow) {
-            return WorkflowModel::where('workflow_id', $workflow->id)
-                ->where('status_from_id', $this->workflow_status->status->id)
-                ->whereIn('status_to_id', auth()->user()->workflow_permissions->pluck('workflow_models_objects')->flatten()->pluck('status_to_id')->toArray())
-                ->get()
-                ->pluck('status_to');
+            $query = WorkflowModel::query();
+            $query->where('workflow_id', $workflow->id);
+            $query->where('status_from_id', $this->workflow_status->status->id);
+            if (config('filament-workflow-manager.permissions_enabled')) {
+                $query->whereIn('status_to_id', auth()->user()->workflow_permissions->pluck('workflow_models_objects')->flatten()->pluck('status_to_id')->toArray());
+            }
+            return $query->get()->pluck('status_to');
         }
         return collect();
     }
