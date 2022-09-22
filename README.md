@@ -44,6 +44,10 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 Please review [our security policy](https://github.com/heloufir/filament-workflow-manager/security/policy) on how to report security vulnerabilities.
 
+## Support
+
+For fast support, please join the [**Filament** community](https://filamentphp.com/discord) discord and send me a message in this channel [#workflow-manager](https://discord.com/channels/883083792112300104/993621948833726535)
+
 ## Credits
 
 - [heloufir](https://github.com/heloufir)
