@@ -23,7 +23,7 @@ class WorkflowHistory extends Page implements HasTable
 
     protected static bool $shouldRegisterNavigation = false;
 
-    protected static ?string $slug = 'workflow-history/{id}/{model}';
+    protected static ?string $slug = 'workflow-history/{id?}/{model?}';
 
     public string|null $modelable_type = null;
     public int|null $modelable_id = null;
