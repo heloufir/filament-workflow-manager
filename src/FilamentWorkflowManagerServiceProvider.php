@@ -9,9 +9,10 @@ use Heloufir\FilamentWorkflowManager\Http\Livewire\WorkflowManagerEdit;
 use Filament\PluginServiceProvider;
 use Heloufir\FilamentWorkflowManager\Resources\UserResource\WorkflowPermissions;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Livewire\Livewire;
 
-class FilamentWorkflowManagerServiceProvider extends PluginServiceProvider
+class FilamentWorkflowManagerServiceProvider extends PackageServiceProvider
 {
 
     public function configurePackage(Package $package): void
