@@ -11,7 +11,7 @@
             {{ __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.modal.add.form.cancel') }}
         </button>
         <div class="w-8 h-8 mt-5" wire:loading>
-            <x-filament-support::loading-indicator
+            <x-filament::loading-indicator
                 class="inline-block animate-spin w-8 h-8 mr-3 text-primary-600"
             />
         </div>

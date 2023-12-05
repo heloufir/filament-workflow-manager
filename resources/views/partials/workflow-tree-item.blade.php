@@ -3,7 +3,7 @@
         {{ $item->status_to->name }}
         <div>
             <button class="delete-btn" wire:click="delete_node({{ $item }})">
-                <x-heroicon-o-x class="w-3 h-3"></x-heroicon-o-x>
+                <x-heroicon-o-x-mark class="w-3 h-3"></x-heroicon-o-x-mark>
             </button>
             @if(!$item->status_to->is_end)
                 <button class="add-btn" wire:click="add_node({{ $item }})">

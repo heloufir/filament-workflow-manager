@@ -11,6 +11,8 @@ use Heloufir\FilamentWorkflowManager\Resources\UserResource\WorkflowPermissions;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Livewire\Livewire;
+use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Assets\Css;
 
 class FilamentWorkflowManagerServiceProvider extends PackageServiceProvider
 {
@@ -59,8 +61,13 @@ class FilamentWorkflowManagerServiceProvider extends PackageServiceProvider
                      WorkflowManagerAddStatus::class,
                      WorkflowPermissions::class
                  ] as $component) {
-            Livewire::component($component::getName(), $component);
+            $componentObject = new $component;
+            Livewire::component($componentObject->getName(), $component);
         }
+
+        FilamentAsset::register([
+            Css::make('filament-workflow-manager',__DIR__ . '/../dist/app.css'),
+        ], package:  'heloufir/filament-workflow-manager');
     }
 
     protected function getResources(): array

@@ -22,7 +22,7 @@ class WorkflowManager extends RelationManager
     public WorkflowModel|null $to_add;
     public bool $show_add_status = false;
 
-    public static function getTitle(): string
+    public static function getTitle($ownerRecord, string $pageClass): string
     {
         return __('filament-workflow-manager::filament-workflow-manager.resources.workflow.page.workflow.heading');
     }

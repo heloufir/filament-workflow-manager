@@ -4,9 +4,9 @@ namespace Heloufir\FilamentWorkflowManager\Resources;
 
 use Heloufir\FilamentWorkflowManager\Core\WorkflowHelper;
 use Filament\Forms\Components;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns;
@@ -21,22 +21,22 @@ class WorkflowResource extends Resource
 
     protected static ?string $model = Workflow::class;
 
-    protected static function getNavigationIcon(): string
+    public static function getNavigationIcon(): string
     {
-        return config('filament-workflow-manager.navigation_icon') ?? 'heroicon-o-collection';
+        return config('filament-workflow-manager.navigation_icon') ?? '';
     }
 
-    protected static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): ?string
     {
         return config('filament-workflow-manager.navigation_group');
     }
 
-    protected static function getNavigationSort(): ?int
+    public static function getNavigationSort(): ?int
     {
         return config('filament-workflow-manager.navigation_sort');
     }
 
-    protected static function getNavigationLabel(): string
+    public static function getNavigationLabel(): string
     {
         return trans('filament-workflow-manager::filament-workflow-manager.resources.title');
     }
@@ -45,7 +45,7 @@ class WorkflowResource extends Resource
     {
         return $form
             ->schema([
-                Components\Card::make([
+                Components\Section::make([
                     // NAME
                     Components\TextInput::make('name')
                         ->label(trans('filament-workflow-manager::filament-workflow-manager.resources.workflow.table.name'))
