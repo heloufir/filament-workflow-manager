@@ -2,25 +2,15 @@
 
 namespace Heloufir\FilamentWorkflowManager\Core;
 
-use Illuminate\Container\Container;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
 
 trait WorkflowHelper
 {
 
     static function get_workflow_models(): Collection
     {
-        $models = collect(File::allFiles(app_path()))
-            ->map(function ($item) {
-                $path = $item->getRelativePathName();
-                $class = sprintf('\%s%s',
-                    Container::getInstance()->getNamespace(),
-                    strtr(substr($path, 0, strrpos($path, '.')), '/', '\\'));
-
-                return substr($class, 1);
-            })
+        $models = collect(get_declared_classes())
             ->filter(function ($class) {
                 $valid = false;
 

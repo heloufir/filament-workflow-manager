@@ -38,7 +38,7 @@ if (!function_exists('workflow_resources_history')) {
             ->color('success')
             ->icon('heroicon-o-adjustments')
             ->link()
-            ->url(fn(Model $record) => route('filament.pages.workflow-history/{id}/{model}', ['id' => $record->id, 'model' => get_class($record)]))
+            ->url(fn(Model $record) => route('filament.pages.workflow-history/{id?}/{model?}', ['id' => $record->id, 'model' => get_class($record)]))
             ->openUrlInNewTab();
     }
 
