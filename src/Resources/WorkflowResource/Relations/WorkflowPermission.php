@@ -5,9 +5,9 @@ namespace Heloufir\FilamentWorkflowManager\Resources\WorkflowResource\Relations;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\HasManyRelationManager;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
+use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TagsColumn;
 use Filament\Tables\Columns\TextColumn;
 use Heloufir\FilamentWorkflowManager\Models\Workflow;
@@ -15,7 +15,7 @@ use Heloufir\FilamentWorkflowManager\Models\WorkflowModel;
 use Illuminate\Database\Schema\Builder;
 use Closure;
 
-class WorkflowPermission extends HasManyRelationManager
+class WorkflowPermission extends RelationManager
 {
     protected static string $view = 'filament-workflow-manager::filament.resources.workflow-resource.pages.workflow-permission';
 
@@ -23,7 +23,7 @@ class WorkflowPermission extends HasManyRelationManager
 
     protected static ?string $recordTitleAttribute = 'role';
 
-    public static function getTitle(): string
+    public static function getTitle($ownerRecord, string $pageClass): string
     {
         return __('filament-workflow-manager::filament-workflow-manager.resources.permissions.title');
     }
@@ -33,7 +33,7 @@ class WorkflowPermission extends HasManyRelationManager
         return __('filament-workflow-manager::filament-workflow-manager.resources.permissions.model');
     }
 
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -70,7 +70,7 @@ class WorkflowPermission extends HasManyRelationManager
         return $data;
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
             ->columns([

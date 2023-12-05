@@ -5,6 +5,7 @@ namespace Heloufir\FilamentWorkflowManager\Resources\WorkflowResource\Pages;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Heloufir\FilamentWorkflowManager\Resources\WorkflowResource;
+Use \Filament\Actions\CreateAction;
 
 class ListWorkflows extends ListRecords
 {
@@ -13,7 +14,7 @@ class ListWorkflows extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

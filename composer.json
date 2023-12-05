@@ -7,7 +7,7 @@
     ],
     "homepage": "https://github.com/heloufir/filament-workflow-manager",
     "require": {
-        "filament/filament": "^2.13"
+        "filament/filament": "^3.0"
     },
     "license": "MIT",
     "autoload": {

@@ -7,7 +7,7 @@ use Filament\Pages\Page;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
-use Filament\Tables\Filters\MultiSelectFilter;
+use Filament\Tables\Filters\SelectFilter;
 use Heloufir\FilamentWorkflowManager\Models\WorkflowStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Heloufir\FilamentWorkflowManager\Models\WorkflowHistory as WorkflowHistoryModel;
@@ -28,7 +28,7 @@ class WorkflowHistory extends Page implements HasTable
     public string|null $modelable_type = null;
     public int|null $modelable_id = null;
 
-    protected function getTitle(): string
+    public function getTitle(): string 
     {
         return trans('filament-workflow-manager::filament-workflow-manager.page.history.title');
     }
@@ -88,7 +88,8 @@ class WorkflowHistory extends Page implements HasTable
     protected function getTableFilters(): array
     {
         return [
-            MultiSelectFilter::make('statuses')
+            SelectFilter::make('statuses')
+                ->multiple()
                 ->label(trans('filament-workflow-manager::filament-workflow-manager.page.history.table.filter.statuses'))
                 ->options(WorkflowStatus::all()->pluck('name', 'id')->toArray())
                 ->query(function (Builder $query, array $state) {

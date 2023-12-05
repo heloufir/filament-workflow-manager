@@ -5,6 +5,7 @@ namespace Heloufir\FilamentWorkflowManager\Resources\WorkflowResource\Pages;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Heloufir\FilamentWorkflowManager\Resources\WorkflowResource;
+Use \Filament\Actions\DeleteAction;
 
 class EditWorkflow extends EditRecord
 {
@@ -13,7 +14,7 @@ class EditWorkflow extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 }
